@@ -49,7 +49,7 @@ export default function Card({
                 minWidth: "45%",
               }}
               className={`text-wrap ${
-                isMobile ? "w-[50%]" : "w-[30%]"
+                isMobile ? "w-[80%]" : "w-[30%]"
               }  h-[auto] text-white`}
             >
               {sector}
