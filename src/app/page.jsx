@@ -15,7 +15,7 @@ export default function Page(param) {
     setShowSideBar(prevState => !prevState);
   };
 
-  const handleTabClick = (e) => {
+const handleTabClick = (e) => {
     const id = e.target.id;
     if (id === "discussion") {
       setShowDiscussion(true);
@@ -33,14 +33,20 @@ export default function Page(param) {
         setShowDiscussion(true);
         setIsMobile(false);
       } else {
+        if(showDiscussion==true){
         setShowMarket(false);
+        setShowDiscussion(true)
+        }else{
+          setShowMarket(true)
+          setShowDiscussion(false)
+        }
         setIsMobile(true);
       }
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [showDiscussion,showMarket]);
 
   return (
     <>
