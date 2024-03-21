@@ -2,32 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.card{
+  border-radius: 15px;
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.2);
+  border-right: solid rgb(202, 190, 190) 4px;
+}
+@media only screen and (min-width:351px){
+  .img{
+    width: 100px;
+    height:100px;
+   } 
+}
+ @media only screen and (max-width:350px){
+  .img{
+    width: 50px;
+    height:50px;
+   } 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+ .sidebarAnimate{
+  animation: side 0.1s ease-in forwards ;
+ }
+ @keyframes side {
+  from{
+    width: 0px;
+  }to{
+    width: 20vw;
   }
-}
+ }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+ .arrowanimator{
+  animation: arrowAnimateToRight 0.1s ease-in forwards ;
+ }
+ @keyframes arrowAnimateToRight {
+  from{
+    left: 0px;
+  }to{
+    left: 18vw;
   }
+ } 
+
+.sideBorder{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
+ .discussiona{
+  animation: discussionAnimatea 0.1s ease-in both ;
+ }
+ @keyframes discussionAnimatea {
+  from{
+    width: 73%;
+  }to{
+    width: 58%;
+  }
+ }
+ .inMobileAnimate{
+  animation: sideMobilee 0.1s ease-in forwards ;
+
+ }
+ @keyframes sideMobilee {
+  from{
+    width: 0px;
+  }to{
+    width: 70%;
+  }
+ }
